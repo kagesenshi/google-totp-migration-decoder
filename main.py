@@ -70,10 +70,6 @@ def decode_migration_url(url: str):
     cls = GetMessageClass(descriptor)
     payload = cls()
     payload.ParseFromString(raw)
-    print("Version:", payload.version)
-    print("Batch size:", payload.batch_size)
-    print("Batch index:", payload.batch_index)
-    print("Batch ID:", payload.batch_id)
     result = []
     for entry in payload.otp_parameters:
         otp_entry = {
@@ -103,11 +99,12 @@ if __name__ == "__main__":
     parser.add_argument('qr_image', nargs='+')
     args = parser.parse_args()
     
+    accounts = []
     for image_path in args.qr_image:
         for url in extract_qr(image_path):
-            accounts = decode_migration_url(url)
-            for i, acc in enumerate(accounts, 1):
-                print(f"\nAccount {i}:")
-                for k, v in acc.items():
-                    print(f"  {k}: {v}")
+            accounts += decode_migration_url(url)
+    for i, acc in enumerate(accounts, 1):
+        print(f"\nAccount {i}:")
+        for k, v in acc.items():
+            print(f"  {k}: {v}")
 
