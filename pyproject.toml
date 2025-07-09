@@ -1,0 +1,11 @@
+[project]
+name = "otp-migration-decode"
+version = "0.1.0"
+description = "Decode Google OTP Migration QR"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "opencv-python>=4.12.0.88",
+    "protobuf>=6.31.1",
+    "pyzbar>=0.1.9",
+]
