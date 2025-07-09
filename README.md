@@ -14,6 +14,7 @@ This project provides a tool to decode Google OTP Migration QR codes. It extract
 - OpenCV for Python
 - Protobuf
 - Pyzbar
+- ZBar libraries (must be installed on the OS)
 
 ## Installation
 
@@ -24,10 +25,25 @@ This project provides a tool to decode Google OTP Migration QR codes. It extract
    cd google-totp-migration-decoder
    ```
 
-2. Install the dependencies:
+2. Install the ZBar libraries:
+
+   On Debian-based systems (using `apt`):
 
    ```bash
-   pip install -r requirements.txt
+   sudo apt update
+   sudo apt install libzbar0
+   ```
+
+   On Fedora/Red Hat-based systems (using `dnf`):
+
+   ```bash
+   sudo dnf install zbar-libs
+   ```
+
+3. Install the dependencies using `uv` and `pyproject.toml`:
+
+   ```bash
+   uv install
    ```
 
 ## Usage
