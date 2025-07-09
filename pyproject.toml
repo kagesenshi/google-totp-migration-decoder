@@ -9,3 +9,6 @@ dependencies = [
     "protobuf>=6.31.1",
     "pyzbar>=0.1.9",
 ]
+
+[project.urls]
+Repository = "https://github.com/kagesenshi/google-totp-migration-decoder.git"
