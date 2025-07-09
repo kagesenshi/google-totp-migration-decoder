@@ -43,7 +43,7 @@ This project provides a tool to decode Google OTP Migration QR codes. It extract
 3. Install the dependencies using `uv` and `pyproject.toml`:
 
    ```bash
-   uv install
+   uv sync
    ```
 
 ## Usage
@@ -51,7 +51,7 @@ This project provides a tool to decode Google OTP Migration QR codes. It extract
 To decode a QR image containing a Google OTP Migration URL, run the following command:
 
 ```bash
-python main.py <path_to_qr_image>
+uv run main.py <path_to_qr_image>
 ```
 
 Replace `<path_to_qr_image>` with the path to your QR image file. The script will output the decoded account details.
@@ -59,7 +59,7 @@ Replace `<path_to_qr_image>` with the path to your QR image file. The script wil
 ## Example
 
 ```bash
-python main.py example_qr.png
+uv run main.py example_qr.png
 ```
 
 This will output the account details extracted from the QR code in `example_qr.png`.
